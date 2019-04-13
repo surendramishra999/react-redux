@@ -42,6 +42,7 @@ CoursePage.propTypes = {
   courses: PropTypes.array.isRequired
 };
 
+// type 1 redux implementation, without using mapDispatchToProps
 function mapStateToProps(state) {
   return {
     courses: state.courses
