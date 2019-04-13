@@ -15,11 +15,11 @@ module.exports = {
     filename: "bundle.js"
   },
   devServer: {
-    states: "minimal",
+    stats: "minimal",
     overlay: true,
     historyApiFallback: true,
     disableHostCheck: true,
-    headers: { "Access-Control-Allowed-Origin": "*" },
+    headers: { "Access-Control-Allow-Origin": "*" },
     https: false
   },
   plugins: [
@@ -28,7 +28,7 @@ module.exports = {
       favicon: "src/favicon.ico"
     })
   ],
-  modules: {
+  module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
