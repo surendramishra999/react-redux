@@ -17,7 +17,7 @@ class CoursePage extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.dispatch(courseActions.createCourse(this.state.course));
+    this.props.createCourse(this.state.course);
   };
   render() {
     return (
@@ -38,15 +38,26 @@ class CoursePage extends React.Component {
 }
 
 CoursePage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  createCourse: PropTypes.func.isRequired,
   courses: PropTypes.array.isRequired
 };
 
-// type 1 redux implementation, without using mapDispatchToProps
+// type 2 2.   Wrap your function into mapDispatchToProps function one by one
 function mapStateToProps(state) {
   return {
     courses: state.courses
   };
 }
 
-export default connect(mapStateToProps)(CoursePage);
+function mapDispatchToProps(dispatch) {
+  return {
+    createCourse: course => {
+      dispatch(courseActions.createCourse(course));
+    }
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CoursePage);
