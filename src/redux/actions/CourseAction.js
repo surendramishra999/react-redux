@@ -42,7 +42,7 @@ function createCourseSuccess(courses) {
   };
 }
 
-export function saveCourses(course) {
+export function saveCourse(course) {
   // eslint-disable-next-line no-unused-vars
   return function(dispatch, getState) {
     return courseApi
