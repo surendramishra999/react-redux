@@ -41,7 +41,7 @@ CoursePage.propTypes = {
 function mapStateToProps(state) {
   return {
     courses:
-      state.authors.length === 0 || state.courses.length === 0
+      state.authors.length === 0
         ? []
         : state.courses.map(course => {
             return {

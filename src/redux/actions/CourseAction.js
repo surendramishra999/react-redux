@@ -28,17 +28,17 @@ function loadCourseSuccess(courses) {
   };
 }
 
-function updateCourseSuccess(courses) {
+function updateCourseSuccess(course) {
   return {
     type: types.UPDATE_COURSE_SUCCESS,
-    courses
+    course
   };
 }
 
-function createCourseSuccess(courses) {
+function createCourseSuccess(course) {
   return {
     type: types.CREATE_COURSE_SUCCESS,
-    courses
+    course
   };
 }
 

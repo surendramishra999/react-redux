@@ -60,7 +60,7 @@ ManageCoursePage.propTypes = {
   loadCourses: PropTypes.func.isRequired,
   loadAuthors: PropTypes.func.isRequired,
   course: PropTypes.object.isRequired,
-  saveCourse
+  saveCourse: PropTypes.func.isRequired
 };
 function mapStateToProps(state) {
   return {
