@@ -1,5 +1,6 @@
 import * as types from "./actionTypes";
 import * as courseApi from "../../api/courseApi";
+import { begainApiCall } from "./ApiStatusAction";
 
 export function createCourse(course) {
   return {
@@ -10,6 +11,7 @@ export function createCourse(course) {
 
 export function loadCourses() {
   return function(dispatch) {
+    dispatch(begainApiCall());
     return courseApi
       .getCourses()
       .then(courses => {
@@ -45,6 +47,7 @@ function createCourseSuccess(course) {
 export function saveCourse(course) {
   // eslint-disable-next-line no-unused-vars
   return function(dispatch, getState) {
+    dispatch(begainApiCall());
     return courseApi
       .saveCourse(course)
       .then(saveCourse => {
